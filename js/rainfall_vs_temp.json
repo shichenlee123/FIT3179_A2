@@ -1,12 +1,26 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Scatter plot of rainfall vs temperature across Australian cities.",
-  "width": 650,
+  "width": 800,
   "height": 400,
   "title": "Rainfall vs Temperature Across Australian Cities",
   "data": {
     "url": "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/data/Weather%20Test%20Data.csv"
   },
+
+  "params": [
+    {
+      "name": "citySearch",
+      "value": "",
+      "bind": {"input": "text", "placeholder": "Type city name..."}
+    }
+  ],
+
+  "transform": [
+    {
+      "filter": "citySearch == '' || test(citySearch, datum.location, 'i')"
+    }
+  ],
   "mark": {"type": "point", "filled": true, "opacity": 0.7},
   "encoding": {
     "x": {"field": "MaxTemp", "type": "quantitative", "title": "Temperature (°C)"},
@@ -15,13 +29,12 @@
       "field": "location",
       "type": "nominal",
       "title": "City",
-      "legend": {"orient": "right"}
+      "legend": null
     },
     "tooltip": [
-      {"field": "city", "title": "City"},
-      {"field": "date", "title": "Date"},
+      {"field": "location", "title": "City"},
       {"field": "rainfall", "title": "Rainfall (mm)", "type": "quantitative", "format": ".1f"},
-      {"field": "temperature", "title": "Temperature (°C)", "type": "quantitative", "format": ".1f"}
+      {"field": "MaxTemp", "title": "Temperature (°C)", "type": "quantitative", "format": ".1f"}
     ]
   }
 }
