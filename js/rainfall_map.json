@@ -7,7 +7,7 @@
   "layer": [
     {
       "data": {
-        "url": "map.topojson",
+        "url": "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/data/map.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
       },
       "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
@@ -33,3 +33,4 @@
   ]
 
 }
+
