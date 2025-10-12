@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 500,
+  "title": "Rainfall in Australia",
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "map.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+    },
+    {
+      "data": {"url": "data/rainfall.csv"},
+      "mark": {"type": "circle", "tooltip": {"content": "data"}},
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {
+          "field": "rainfall",
+          "type": "quantitative",
+          "title": "Rainfall (mm)"
+        },
+        "color": {
+          "field": "rainfall",
+          "type": "quantitative",
+          "scale": {"scheme": "blues"}
+        }
+      }
+    }
+  ]
+}
