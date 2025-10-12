@@ -13,7 +13,7 @@
       "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
     },
     {
-      "data": {"url": "data/rainfall.csv"},
+      "data": {"url": "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/data/rainfall.2025-09-30.12month.aus.csv"},
       "mark": {"type": "circle", "tooltip": {"content": "data"}},
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
@@ -31,4 +31,5 @@
       }
     }
   ]
+
 }
