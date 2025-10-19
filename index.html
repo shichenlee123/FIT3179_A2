@@ -1,37 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <title>Australian Rainfall</title>
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-  
+
   <link rel="stylesheet" type="text/css" href="https://shichenlee123.github.io/FIT3179_A2/css/style.css" media="all">
-  
+
 </head>
+
 <body>
-  
-<div id="symbol_map"></div>
-<div id="scatter_plot"></div>
-<div id="scatter_plot2"></div>
+  <div style="text-align: center; margin: 30px 0;">
+    <h1 style="font-family: Arial, sans-serif;">Australian Rainfall Analysis</h1>
+    <h2 style="font-family: Arial, sans-serif;">
+      This visualisation aims to explore patterns between rainfall and other factors in Australia
+    </h2>
+  </div>
 
-<script type="text/javascript">
+  <div style="text-align: center; margin: 30px 0;">
+    <h3 style="font-family: Arial, sans-serif;">Rainfall across Australia</h3>
+    <p style="font-family: Arial, sans-serif;">
+      Total rainfall across Australia in 12 months up until 30 Sep 2025
+    </p>
+  </div>
+  <div id="symbol_map"></div>
 
-  var spec2 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/rainfall_map.json";
-  vegaEmbed('#symbol_map', spec2).then(function(result) {
-  }).catch(console.error);
+  <div style="text-align: center; margin: 30px 0;">
+    <h3 style="font-family: Arial, sans-serif;">Rainfall vs Temperature</h3>
+    <p style="font-family: Arial, sans-serif;">
+      Scatterplot of rainfall against temperature in a day across major cities
+    </p>
+  </div>
+  <div id="scatter_plot"></div>
 
-  var spec3 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/rainfall_vs_temp.json";
-  vegaEmbed('#scatter_plot', spec3).then(function(result) {
-  }).catch(console.error);
+  <div style="text-align: center; margin: 30px 0;">
+    <h3 style="font-family: Arial, sans-serif;">Rainfall vs Sunshine</h3>
+    <p style="font-family: Arial, sans-serif;">
+      Scatterplot of rainfall against sunshine in a day across major cities
+    </p>
+  </div>
+  <div id="scatter_plot2"></div>
 
-  var spec4 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/sunshine.json";
-  vegaEmbed('#scatter_plot2', spec4).then(function(result) {
-  }).catch(console.error);
-</script>
+  <script type="text/javascript">
+
+    var spec2 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/rainfall_map.json";
+    vegaEmbed('#symbol_map', spec2).then(function (result) {
+    }).catch(console.error);
+
+    var spec3 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/rainfall_vs_temp.json";
+    vegaEmbed('#scatter_plot', spec3).then(function (result) {
+    }).catch(console.error);
+
+    var spec4 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/sunshine.json";
+    vegaEmbed('#scatter_plot2', spec4).then(function (result) {
+    }).catch(console.error);
+  </script>
 
 </body>
 
 </html>
-
-
-
