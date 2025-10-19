@@ -27,7 +27,12 @@
           "field": "rainfall",
           "type": "quantitative",
           "scale": {"scheme": "blues"}
-        }
+        },
+        "tooltip": [
+          {"field": "Station_name", "title": "Station"},
+          {"field": "Region", "title": "Region"},
+          {"field": "rainfall", "type": "quantitative", "title": "Rainfall (mm)", "format": ".1f"}
+        ]
       }
     }
   ]
