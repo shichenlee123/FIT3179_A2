@@ -12,6 +12,7 @@
   
 <div id="symbol_map"></div>
 <div id="scatter_plot"></div>
+<div id="scatter_plot2"></div>
 
 <script type="text/javascript">
 
@@ -21,6 +22,10 @@
 
   var spec3 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/rainfall_vs_temp.json";
   vegaEmbed('#scatter_plot', spec3).then(function(result) {
+  }).catch(console.error);
+
+  var spec4 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/sunshine.json";
+  vegaEmbed('#scatter_plot2', spec4).then(function(result) {
   }).catch(console.error);
 </script>
 
