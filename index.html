@@ -1,44 +1,37 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-
+  
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-
+  
 </head>
-
 <body>
+  
+<div id="symbol_map"></div>
+<div id="scatter_plot"></div>
+<div id="scatter_plot2"></div>
 
-  <div id="symbol_map" style="display: flex; justify-content: center; margin-bottom: 40px;">
-    <div style="width: 80%; max-width: 900px;" id="map_container"></div>
-  </div>
+<script type="text/javascript">
 
-  <div id="scatter_plot" style="display: flex; justify-content: center; margin-bottom: 40px;">
-    <div style="width: 80%; max-width: 900px;" id="scatter_container1"></div>
-  </div>
+  var spec2 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/rainfall_map.json";
+  vegaEmbed('#symbol_map', spec2).then(function(result) {
+  }).catch(console.error);
 
-  <div id="scatter_plot2" style="display: flex; justify-content: center; margin-bottom: 40px;">
-    <div style="width: 80%; max-width: 900px;" id="scatter_container2"></div>
-  </div>
+  var spec3 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/rainfall_vs_temp.json";
+  vegaEmbed('#scatter_plot', spec3).then(function(result) {
+  }).catch(console.error);
 
-  <script type="text/javascript">
-
-    var spec2 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/rainfall_map.json";
-    vegaEmbed('#symbol_map', spec2).then(function (result) {
-    }).catch(console.error);
-
-    var spec3 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/rainfall_vs_temp.json";
-    vegaEmbed('#scatter_plot', spec3).then(function (result) {
-    }).catch(console.error);
-
-    var spec4 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/sunshine.json";
-    vegaEmbed('#scatter_plot2', spec4).then(function (result) {
-    }).catch(console.error);
-  </script>
+  var spec4 = "https://raw.githubusercontent.com/shichenlee123/FIT3179_A2/refs/heads/main/js/sunshine.json";
+  vegaEmbed('#scatter_plot2', spec4).then(function(result) {
+  }).catch(console.error);
+</script>
 
 </body>
 
 </html>
+
+
+

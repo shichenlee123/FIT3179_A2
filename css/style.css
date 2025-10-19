@@ -1,8 +1,9 @@
-#symbol_map {
-	top:100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 100px;
-	/*height: 1000px;
-	width: 800px;*/
+#symbol_map,
+#scatter_plot,
+#scatter_plot2 {
+	display: flex;
+	justify-content: center;
+	margin: 40px auto;
+	width: 100%;
+	max-width: 1000px;
 }
